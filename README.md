@@ -21,11 +21,11 @@ and launch the server manually with
 
 ## Mainteinance
 
-* To build an image from the Dockerfile in this directory
+### Build an image from the Dockerfile in this directory
 
     docker build -t facciolo/ipol2 .
 
-* To delete an image
+### Delete a docker image
 
     docker rmi facciolo/ipol2
 
