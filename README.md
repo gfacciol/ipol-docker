@@ -11,19 +11,21 @@ To start the IPOL server with a demo stored in a local path <path_to_app_dir> us
 
 The server will be available at http://127.0.0.1:8080 while the server output is shown in the console.
 
-To access the shell in the container run 
+To access the shell of the container run 
 
     docker run  -p 8080:8080  -t -i facciolo/ipol  -v <path_to_app_dir>:/ipol/app/mydemo /bin/bash
 
-and launch the demo manually with 
+and launch the server manually with 
 
     python /ipol/demo.py build run
 
 ## Mainteinance
 
 * To build an image from the Dockerfile in this directory
+
     docker build -t facciolo/ipol2 .
 
 * To delete an image
+
     docker rmi facciolo/ipol2
 
