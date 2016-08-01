@@ -27,6 +27,14 @@ Keep in mind that changes to the files of the virtual machine (except for the di
 
     docker build -t facciolo/ipol .
 
-### Delete a docker image
+### Delete a docker image and containers
+
+First remove any exited docker container
+
+    docker ps -a -f status=exited -q | xargs docker rm -v
+
+then remove the image
 
     docker rmi facciolo/ipol
+
+[More information about container/image cleanup to reduce disk usage](https://forums.docker.com/t/where-does-docker-keep-images-containers-so-i-can-better-track-my-disk-usage/8370/6)
