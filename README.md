@@ -5,27 +5,28 @@ Contains an IPOL server for development and testing of demos.
 ## Usage
 
 The IPOL server is packaged as Docker image so it can easily be executed with the Docker run command.
-To start the IPOL server with a demo stored in a local path <path_to_app_dir> use
+This command will download the Docker image and start the IPOL server. To run a demo stored in a local path <path_to_app_dir> use
 
     docker run  -p 8080:8080  -t -i facciolo/ipol  -v <path_to_app_dir>:/ipol/app/mydemo
 
-The server will be available at http://127.0.0.1:8080 while the server output is shown in the console.
+The server will be available at http://127.0.0.1:8080 while the server output will be shown in the console.
 
-To access the shell of the container run 
+To access the shell of the virtual machine run 
 
     docker run  -p 8080:8080  -t -i facciolo/ipol  -v <path_to_app_dir>:/ipol/app/mydemo /bin/bash
 
-and launch the server manually with 
+and then launch the demo manually with 
 
     python /ipol/demo.py build run
+
+Keep in mind that changes to the files of the virtual machine (except for the directory mounted at /ipol/app/mydemo) are lost after closing the session. 
 
 ## Mainteinance
 
 ### Build an image from the Dockerfile in this directory
 
-    docker build -t facciolo/ipol2 .
+    docker build -t facciolo/ipol .
 
 ### Delete a docker image
 
-    docker rmi facciolo/ipol2
-
+    docker rmi facciolo/ipol
