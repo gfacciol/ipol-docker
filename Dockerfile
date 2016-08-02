@@ -1,9 +1,16 @@
 FROM ubuntu:14.04 
 MAINTAINER Gabriele Facciolo <gfacciol@gmail.com>
 # ipol devel base packages
-RUN apt-get update && apt-get install -y wget curl git gcc g++ make cmake libfftw3-dev libtiff5-dev libpng-dev libgsl0-dev libeigen2-dev libeigen3-dev zlib1g-dev liblapacke-dev libblas-dev
+RUN apt-get update && apt-get install -y \
+    wget curl git gcc g++ make cmake \
+    libfftw3-dev libtiff5-dev libpng-dev \
+    libgsl0-dev libeigen2-dev libeigen3-dev \
+    zlib1g-dev liblapacke-dev libblas-dev \
+    && rm -rf /var/lib/apt/lists/*
 # python, numpy and PIL
-RUN apt-get install -y python python-numpy python-mako python-cherrypy3 python-PIL 
+RUN apt-get install -y \
+    python python-numpy python-mako python-cherrypy3 python-PIL \
+    && rm -rf /var/lib/apt/lists/*
 RUN wget -O- https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install -U pip
 # ipol demo server
