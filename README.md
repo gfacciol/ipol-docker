@@ -28,6 +28,12 @@ Keep in mind that changes to the files of the virtual machine (except for the di
 
     docker build -t facciolo/ipol .
 
+### List all images and containers 
+
+    docker images -a
+
+    docker ps -a
+
 ### Delete a docker image and containers
 
 First remove any exited docker container
