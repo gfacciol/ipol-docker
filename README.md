@@ -5,11 +5,12 @@ Contains an IPOL server for development and testing of demos.
 ## Usage
 
 The IPOL server is packaged as Docker image so it can easily be executed with the Docker run command.
-This command will download the Docker image and start the IPOL server. To run a demo stored in a local path <path_to_app_dir> use
+This means that **you don't need to download this repository**, just **install Docker for [windows](https://docs.docker.com/docker-for-windows/), [mac](https://docs.docker.com/docker-for-mac/), or [linux](https://docs.docker.com/engine/installation/linux/)** and then **run the following command**. It will download the Docker image and start the IPOL server right away, compiling and running the demo stored in a local path *\<path_to_app_dir\>*
 
     docker run  -p 8080:8080  -t -i facciolo/ipol  -v <path_to_app_dir>:/ipol/app/mydemo
 
-The server will be available at http://127.0.0.1:8080 while the server output will be shown in the console.
+The server will be visible at [http://127.0.0.1:8080](http://127.0.0.1:8080) and the server output will be shown in the console. To stop the server just press *Ctrl-C* in the console.
+
 
 To access the shell of the virtual machine run 
 
