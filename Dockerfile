@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev liblapacke-dev libblas-dev && \
     rm -rf /var/lib/apt/lists/*
 # python, numpy and PIL
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     python python-numpy python-mako python-cherrypy3 python-PIL && \
     rm -rf /var/lib/apt/lists/*
 RUN wget -O- https://bootstrap.pypa.io/get-pip.py | python
