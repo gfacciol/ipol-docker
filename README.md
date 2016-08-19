@@ -36,9 +36,13 @@ Keep in mind that changes to the files of the virtual machine (except for the di
 
 ### Delete a docker image and containers
 
-First remove any exited docker container
+First remove any exited docker container and untagged images 
 
+    # exited containers 
     docker ps -a -f status=exited -q | xargs docker rm -v
+    # remove untagged images  
+    docker rmi $(docker images | grep none | awk '{ print $3}')
+
 
 then remove the image
 
